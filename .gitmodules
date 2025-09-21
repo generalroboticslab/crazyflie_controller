@@ -1,0 +1,6 @@
+[submodule "crazyflie-lib-python"]
+	path = crazyflie-lib-python
+	url = git@github.com:easoplee/crazyflie-lib-python.git
+[submodule "crazyflie-firmware"]
+	path = crazyflie-firmware
+	url = git@github.com:easoplee/crazyflie-firmware.git

@@ -1,0 +1,17 @@
+cache/
+.vscode/
+__pycache__/
+*results*/
+data/
+*.ipynb
+*.mp4
+checkpoints/
+runs/
+*.npz
+*.csv
+*.png
+old_scripts/
+
+# Keep this base folder as an example
+!real_crazyflie_example_results/
+!real_crazyflie_example_results/**

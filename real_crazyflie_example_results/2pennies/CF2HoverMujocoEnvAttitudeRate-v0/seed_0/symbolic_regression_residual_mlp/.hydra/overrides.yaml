@@ -1,0 +1,4 @@
+- dynamics_model=residual_mlp
+- dynamics_model.model_a_path=/home/generalroboticslab/Desktop/sym2real/01_from_scratch/CF2HoverMujocoEnvAttitudeRate-v0/hover/env_params_wind_x_0_wind_y_0_wind_z_0_mass_0.027_com_x_0.001/seed_1/sym2real.dynamics_model.SymbolicPysr/2025.07.01:000527
+- overrides.reference_type=hover
+- seed=0

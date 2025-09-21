@@ -1,0 +1,51 @@
+algorithm:
+  package: _group_
+  name: pets
+  normalize: false
+dynamics_model:
+  _target_: sym2real.dynamics_model.Residual
+  model_a: symbolic_regression
+  model_a_path: /home/generalroboticslab/Desktop/sym2real/01_from_scratch/CF2HoverMujocoEnvAttitudeRate-v0/hover/env_params_wind_x_0_wind_y_0_wind_z_0_mass_0.027_com_x_0.001/seed_1/sym2real.dynamics_model.SymbolicPysr/2025.07.01:000527
+  model_b:
+    _target_: sym2real.dynamics_model.GaussianMLP
+    ensemble_size: 1
+    deterministic: true
+    num_layers: 4
+    in_size: ${..in_size}
+    out_size: ${..out_size}
+    action_type: attitude_rate
+  in_size: ???
+  out_size: ???
+  seed: ${seed}
+  enable_spearman: true
+overrides:
+  package: _group_
+  env: CF2HoverMujocoEnvAttitudeRate-v0
+  trial_length: 400
+  model_update_freq: 400
+  num_trials: 20
+  num_steps: 6000
+  model_batch_size: 256
+  validation_ratio: 0.2
+  patience: 35
+  model_lr: 0.0001
+  model_wd: 5.0e-05
+  initial_exploration_steps: 400
+  reference_type: hover
+  hover_position:
+  - 0.0
+  - 0.0
+  - 1.0
+action_optimizer: {}
+env_params:
+  wind_x: 0
+  wind_y: 0
+  wind_z: 0
+  mass: 0.027
+  com_x: 0.001
+seed: 0
+device: cuda
+log_frequency_agent: 1000
+save_video: false
+debug_mode: false
+root_dir: real_cf_test_${now:%m.%d}_results_2pennies/
